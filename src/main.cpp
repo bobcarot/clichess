@@ -123,9 +123,7 @@ int main(int argc, char* argv[]) {
   start_event_stream(net, game, game_tok);
   send_challenge(
       net, game_tok,
-      lichess::request::new_challenge::config{.opponent_name = argv[1],
-                                              .is_color_random = false,
-                                              .color = chess::Color::WHITE});
+      lichess::request::new_challenge::config{.opponent_name = argv[1]});
 
   auto canvas = std::make_shared<render::context>(std::cout);
 

@@ -83,9 +83,6 @@ void hook::board_stream::init_hook() {
                      auto my_last_move = self->ctx_->my_last_move.load();
                      if (mv.from() != my_last_move.from() &&
                          mv.to() != my_last_move.to()) {
-                       log->info("mv ({} {}), last ({} {})", mv.from().index(),
-                                 mv.to().index(), my_last_move.from().index(),
-                                 my_last_move.to().index());
                        board->makeMove(mv);
                        self->ctx_->is_my_turn.store(true);
                      }
